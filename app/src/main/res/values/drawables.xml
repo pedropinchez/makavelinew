@@ -1,0 +1,8 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="ic_menu_vip" type="drawable">@drawable/ic_dashboard_black_24dp</item>
+    <item name="ic_menu_rate" type="drawable">@drawable/feedback</item>
+    <item name="ic_menu_share" type="drawable">@drawable/ic_menu_share</item>
+    <item name="ic_menu_disclaimer" type="drawable">@android:drawable/ic_menu_send</item>
+    <item name="ic_menu_contact" type="drawable">@android:drawable/sym_call_incoming</item>
+
+</resources>

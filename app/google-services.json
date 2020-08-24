@@ -1,0 +1,196 @@
+{
+  "project_info": {
+    "project_number": "445206195223",
+    "firebase_url": "https://oddsmaxbets.firebaseio.com",
+    "project_id": "oddsmaxbets",
+    "storage_bucket": "oddsmaxbets.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445206195223:android:dcc977421487f91b0ec052",
+        "android_client_info": {
+          "package_name": "com.example.a2oddsmaxbets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445206195223-pug1iogf10f18qceos9sg5lo7k9n0p1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.a2oddsmaxbets",
+            "certificate_hash": "572a7eaf74e74cb6e58bbc8b50bf7cc804d5abfb"
+          }
+        },
+        {
+          "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOahzcM8VXJ4NqJ5UHD0pU9add_hzacWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445206195223:android:76857644096f767c0ec052",
+        "android_client_info": {
+          "package_name": "com.example.fire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445206195223-7em8m4j86kvgn9ibmeb0e6gue6gs5ge2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fire",
+            "certificate_hash": "9004fd21117828576553c56e9f03ca533d04cf08"
+          }
+        },
+        {
+          "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOahzcM8VXJ4NqJ5UHD0pU9add_hzacWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445206195223:android:1c474378b53d40190ec052",
+        "android_client_info": {
+          "package_name": "com.example.makaveli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445206195223-2qv03e941hf4321piqbmmpr9rbhtajj9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.makaveli",
+            "certificate_hash": "9004fd21117828576553c56e9f03ca533d04cf08"
+          }
+        },
+        {
+          "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOahzcM8VXJ4NqJ5UHD0pU9add_hzacWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445206195223:android:b9a2aae212d2e3650ec052",
+        "android_client_info": {
+          "package_name": "com.example.recycler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445206195223-a3jm5k3rppcmip2i8pkt5mjhfc8tecl8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.recycler",
+            "certificate_hash": "9004fd21117828576553c56e9f03ca533d04cf08"
+          }
+        },
+        {
+          "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOahzcM8VXJ4NqJ5UHD0pU9add_hzacWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445206195223:android:71d4ea99bdaa4bbe0ec052",
+        "android_client_info": {
+          "package_name": "com.maxbets.makaveli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445206195223-6b3henbsnaoi19c80v3e8q7h19fguguq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maxbets.makaveli",
+            "certificate_hash": "9004fd21117828576553c56e9f03ca533d04cf08"
+          }
+        },
+        {
+          "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOahzcM8VXJ4NqJ5UHD0pU9add_hzacWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445206195223-9b8ee4a8dug7nk5n41dec4nd55rkavg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

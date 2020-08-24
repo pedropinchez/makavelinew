@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgrey"
+    android:orientation="vertical">
+
+
+
+    <EditText
+        android:id="@+id/post_title"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/login_gradient"
+        android:ems="10"
+        android:hint="Enter post title..."
+        android:inputType="textPersonName"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="#fff"
+        android:textColorHint="#CCDF10"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/post_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="72dp" />
+
+
+
+    <EditText
+        android:id="@+id/post_details"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:background="@drawable/login_gradient"
+        android:gravity="top"
+        android:padding="15dp"
+        android:textColor="#fff"
+        android:textColorHint="#CCDF10"
+        android:textStyle="normal"
+        android:hint="Enter post details..."
+        />
+
+    <ImageView
+        android:id="@+id/post_image"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/_220sdp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/login_gradient"
+        android:layout_marginRight="10dp" />
+    <Button
+        android:id="@+id/submit_post_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:text="Submit"
+        android:backgroundTint="#09D612"
+        android:textColor="@color/darkwhite"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:elevation="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingTop="@dimen/_15sdp"/>
+
+
+
+
+</LinearLayout>

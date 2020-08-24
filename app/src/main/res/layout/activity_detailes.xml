@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/_60sdp"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp"
+           >
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/ads"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-5425147727091345/7333763258">
+
+            </com.google.android.gms.ads.AdView>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Here are our latest odds which have proven very efficient"
+            android:textColor="#CF1A0D"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/grey" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:text="17 hours ago"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/grey" />
+
+        <TextView
+            android:id="@+id/template"
+           android:textColorLink="#E91E63"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="@string/template"
+            android:textColor="#2196F3"
+            android:textSize="18sp"
+            android:linksClickable="true"
+           
+            />
+
+            <Button
+                android:background="@drawable/btn_rounded_green"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/whatsapp"
+                android:padding="@dimen/_10sdp"
+                android:text="Whatsapp message"
+                android:textColor="#090909"
+                android:paddingBottom="@dimen/_10sdp"/>
+            <Button
+                android:background="@drawable/btn_rounded_blue"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/telegram"
+                android:padding="@dimen/_10sdp"
+                android:text="join us on telegram"
+                android:textColor="#090909"/>
+
+
+        <TextView
+            android:id="@+id/txtcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="@string/terms_of_use"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/txttime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="updated on---"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+       
+
+
+
+    <com.maxbets.makaveli.ScrollableGridView
+        android:id="@+id/simpleGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="1" />
+
+        </LinearLayout>
+</ScrollView>

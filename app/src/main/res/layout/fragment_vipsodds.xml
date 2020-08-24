@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ad"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-5425147727091345/4879808548">
+
+        </com.google.android.gms.ads.AdView>
+        <Button
+            android:background="@drawable/btn_rounded_green"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/whatsapp"
+            android:padding="@dimen/_10sdp"
+            android:text="Whatsapp message"
+            android:textColor="#090909"
+            android:paddingBottom="@dimen/_10sdp"/>
+        <Button
+            android:background="@drawable/btn_rounded_blue"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/telegram"
+            android:padding="@dimen/_10sdp"
+            android:text="join us on telegram"
+            android:textColor="#090909"/>
+
+
+        <TextView
+            android:textSize="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10sdp"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="How to register to 2 Odds MaxBet"
+            android:layout_width="wrap_content"
+            android:textColor="#4CAF50"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:clickable="true"
+            android:linksClickable="true"
+            style="@style/about_description"
+            android:text="@string/template"
+            />
+        <View
+            android:background="#8BC34A"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"/>
+        <TextView
+            android:textSize="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:textColor="#4CAF50"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="Kenyans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            style="@style/about_description"
+            android:text="@string/kenyans"
+            />
+        <View
+            android:background="#8BC34A"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"/>
+        <TextView
+            android:textSize="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:textColor="#4CAF50"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="Tips to our esteemed customers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            style="@style/about_description"
+            android:text="@string/Advise"
+            />
+        <View
+            android:background="#8BC34A"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"/>
+        <TextView
+            android:textSize="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10sdp"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="Nigerians"
+            android:textColor="#4CAF50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            style="@style/about_description"
+            android:text="@string/nigerians"
+            />
+
+        <View
+            android:background="#8BC34A"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"/>
+        <TextView
+            android:textSize="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10sdp"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="Acceptance"
+            android:textColor="#4CAF50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            style="@style/about_description"
+            android:text="@string/accept"
+            />
+
+
+
+
+   
+    </LinearLayout>
+</ScrollView>
