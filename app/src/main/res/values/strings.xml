@@ -10,6 +10,11 @@
     <string name="menu_rate">RateUs</string>
     <string name="menu_share">Share</string>
     <string name="menu_contactus">ContactUs</string>
+    <string name="interstitial_add">ca-app-pub-5425147727091345/1431727558</string>
+    <string name="interstitial_dets">ca-app-pub-5425147727091345/4050684864</string>
+    <string name="interstitial_file">ca-app-pub-5425147727091345/3036646786</string>
+    <string name="interstitial_login">ca-app-pub-5425147727091345/4361143221</string>
+    <string name="interstitial_test">ca-app-pub-3940256099942544/1033173712</string>
     <string name="terms_of_use">
 
 

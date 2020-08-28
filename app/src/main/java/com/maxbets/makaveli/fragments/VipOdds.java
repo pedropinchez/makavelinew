@@ -43,7 +43,7 @@ public class VipOdds extends Fragment {
         final ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_vipsodds, null);
         super.onCreate(savedInstanceState);
         mAdView=view.findViewById(R.id.ad);
-        mAdViews= view.findViewById(R.id.ads);
+
         telegram=view.findViewById(R.id.telegram);
         whatsapp=view.findViewById(R.id.whatsapp);
         whatsapp.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +97,6 @@ public class VipOdds extends Fragment {
 
         // mAdView = commentdialog.findViewById(R.id.adView);
         mAdView.loadAd(adRequest);
-        mAdViews.loadAd(adRequest);
         mAdView.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {

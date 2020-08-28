@@ -32,7 +32,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
-        android:text="Post with no imagess"
+        android:text="Post with no images"
         android:backgroundTint="#09D612"
         android:textColor="@color/darkwhite"
         android:textStyle="bold"
@@ -61,5 +61,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:text="Back Home"
+        android:backgroundTint="#09D612"
+        android:textColor="@color/darkwhite"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:elevation="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/interstitial_file">
+
+    </com.google.android.gms.ads.AdView>
+
 
 </LinearLayout>

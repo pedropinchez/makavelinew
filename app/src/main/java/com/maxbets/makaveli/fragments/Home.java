@@ -34,8 +34,12 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -84,7 +88,7 @@ public class Home extends Fragment {
 
         recyclerView = view.findViewById(R.id.recycler);
         mAdView = view.findViewById(R.id.ad);
-        mAdViews = view.findViewById(R.id.ads);
+
         listdata = new ArrayList<>();
         documentIds = new ArrayList<>();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -127,7 +131,46 @@ public class Home extends Fragment {
 
         }
 
+        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+                Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+            }
+        });
 
+        adRequest = new AdRequest.Builder().build();
+
+        // mAdView = commentdialog.findViewById(R.id.adView);
+        mAdView.loadAd(adRequest);
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                try {
+                    mAdView.setVisibility(View.VISIBLE);
+                } catch (Exception ignored) {
+                }
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                try {
+                    AdRequest adRequest = new AdRequest.Builder().build();
+
+                    mAdView.loadAd(adRequest);
+                } catch (Exception ignored) {
+                }
+            }
+
+            @Override
+            public void onAdClosed() {
+                try {
+                    AdRequest adRequest = new AdRequest.Builder().build();
+
+                    mAdView.loadAd(adRequest);
+                } catch (Exception ignored) {
+                }
+            }
+        });
 
 
         return view;
@@ -304,7 +347,6 @@ public class Home extends Fragment {
                 .show();
 
     }
-
 
 
 }

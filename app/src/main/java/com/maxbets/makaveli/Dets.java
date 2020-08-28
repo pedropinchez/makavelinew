@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -42,6 +43,8 @@ public class Dets extends AppCompatActivity {
     Button telegram, whatsapp;
     TextView template;
     private static Context context;
+    InterstitialAd interstitialAd;
+    AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +63,11 @@ public class Dets extends AppCompatActivity {
         // Create an object of CustomAdapter and set Adapter to GirdView
         template.setMovementMethod(LinkMovementMethod.getInstance());
 
-        
+        MobileAds.initialize(this, "ca-app-pub-5425147727091345~6303301938");
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-5425147727091345/4050684864");
+        AdRequest request = new AdRequest.Builder().build();
+        interstitialAd.loadAd(request);
 
         bund = getIntent();
             tt=bund.getStringExtra("Title");
@@ -169,12 +176,38 @@ public class Dets extends AppCompatActivity {
         time.setText(tm);
         date.setText(pm);
     }
+
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(intent);
-        finish();
+
+        interstitialAd.setAdListener(new AdListener(){
+            public void onAdLoaded(){
+                if (interstitialAd.isLoaded()) {
+                    interstitialAd.show();
+                }
+                else
+                {
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                }
+            }
+
+
+            @Override
+            public void onAdFailedToLoad(int i) {
+                super.onAdFailedToLoad(i);
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+                Dets.super.onBackPressed();
+
+                //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+
+
     }
     @Override
     protected void onRestart() {

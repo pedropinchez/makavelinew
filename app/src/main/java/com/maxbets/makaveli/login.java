@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -34,6 +35,8 @@ public class login extends AppCompatActivity {
     ProgressDialog pdialog;
     AdView mAdView, mAdViews;
     AdRequest adRequest;
+    InterstitialAd interstitialAd;
+    AdView adView;
 
     private static final String EMAIL = "email";
     @Override
@@ -47,7 +50,11 @@ public class login extends AppCompatActivity {
         //pdialog=findViewById(R.id.login_progress);
 
         mAuth = FirebaseAuth.getInstance();
-
+        MobileAds.initialize(this, "ca-app-pub-5425147727091345~6303301938");
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        AdRequest request = new AdRequest.Builder().build();
+        interstitialAd.loadAd(request);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -106,7 +113,48 @@ public class login extends AppCompatActivity {
             }
         });
     }
+    public void InitializeAds() {
+        MobileAds.initialize(this, "ca-app-pub-5425147727091345~6303301938");
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-5425147727091345/4361143221");
+        AdRequest request = new AdRequest.Builder().build();
+        interstitialAd.loadAd(request);
 
+
+
+
+    }
+    @Override
+    public void onBackPressed() {
+
+        interstitialAd.setAdListener(new AdListener(){
+            public void onAdLoaded(){
+                if (interstitialAd.isLoaded()) {
+                    interstitialAd.show();
+                }
+                else
+                {
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                }
+            }
+
+
+            @Override
+            public void onAdFailedToLoad(int i) {
+                super.onAdFailedToLoad(i);
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+
+            @Override
+            public void onAdClosed() {
+
+
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+
+
+    }
     private void login(){
         String Email=email.getText().toString();
         String Password=password.getText().toString();
@@ -120,6 +168,7 @@ public class login extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Toast.makeText(login.this, "successful", Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                InitializeAds();
                                 updateUI(user);
                             } else {
                                 // If sign in fails, display a message to the user.
@@ -141,6 +190,7 @@ public class login extends AppCompatActivity {
         if (account != null) {
             Toast.makeText(this, "You Signed In successfully", Toast.LENGTH_LONG).show();
             startActivity(new Intent(this, MainActivity.class));
+            finish();
         } else {
             Toast.makeText(this, "You arent registered,kindly sign up", Toast.LENGTH_LONG).show();
             //startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -154,15 +204,10 @@ public class login extends AppCompatActivity {
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
 
             startActivity(new Intent(login.this, MainActivity.class));
+            finish();
 
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 }

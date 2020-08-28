@@ -173,12 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_settings:
 
-                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                String shareBody = "Download 2 odds maxbets from the playstore https://play.google.com/store/apps/details?id=" + getApplicationContext();
-                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "2 odds maxbets");
-                sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
-                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+
 
 
                 break;
@@ -186,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_login:
 
                 startActivity(new Intent(getApplicationContext(), login.class));
+                finish();
                 break;
 
         }

@@ -25,6 +25,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -42,6 +47,8 @@ public class AddActivity extends AppCompatActivity {
     EditText name_et, age_et;
     Button add_btn;
     private ProgressDialog pdialog;
+    InterstitialAd interstitialAd;
+    AdView adView;
 
 
     @Override
@@ -57,7 +64,11 @@ public class AddActivity extends AppCompatActivity {
         name_et = findViewById(R.id.post_title);
         age_et = findViewById(R.id.post_details);
         add_btn = findViewById(R.id.submit);
-
+        MobileAds.initialize(this, "ca-app-pub-5425147727091345~6303301938");
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-5425147727091345/1431727558");
+        AdRequest request = new AdRequest.Builder().build();
+        interstitialAd.loadAd(request);
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,10 +155,35 @@ public class AddActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
-    }
+        interstitialAd.setAdListener(new AdListener(){
+            public void onAdLoaded(){
+                if (interstitialAd.isLoaded()) {
+                    interstitialAd.show();
+                }
+                else
+                {
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                }
+            }
+
+            @Override
+            public void onAdFailedToLoad(int i) {
+                super.onAdFailedToLoad(i);
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+
+            @Override
+            public void onAdClosed() {
+
+
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+
+
+
+}
     private void buildLocalNotification(String title, String message) {
 
         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
