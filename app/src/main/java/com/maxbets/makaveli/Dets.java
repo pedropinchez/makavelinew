@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -45,6 +47,8 @@ public class Dets extends AppCompatActivity {
     private static Context context;
     InterstitialAd interstitialAd;
     AdView adView;
+    Toolbar toolbar;
+    Button website;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +60,18 @@ public class Dets extends AppCompatActivity {
         time = findViewById(R.id.txttime);
         date=findViewById(R.id.date);
         whatsapp=findViewById(R.id.whatsapp);
-       
+        website=findViewById(R.id.website);
         template=findViewById(R.id.template);
         simpleGridView = findViewById(R.id.simpleGridView);
         telegram=findViewById(R.id.telegram);
         // Create an object of CustomAdapter and set Adapter to GirdView
         template.setMovementMethod(LinkMovementMethod.getInstance());
-
         MobileAds.initialize(this, "ca-app-pub-5425147727091345~6303301938");
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId("ca-app-pub-5425147727091345/4050684864");
         AdRequest request = new AdRequest.Builder().build();
         interstitialAd.loadAd(request);
+        interstitialAd.show();
 
         bund = getIntent();
             tt=bund.getStringExtra("Title");
@@ -89,7 +93,7 @@ public class Dets extends AppCompatActivity {
                 waIntent.setPackage("com.telegram");
                 if (waIntent != null) {
 
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/joinchat/AAAAAD71gpgOmWG1E3SxVw"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/joinchat/AAAAAD71gph5ijYEJTOLCg"));
                     startActivity(intent);
                 }
                 else
@@ -117,6 +121,16 @@ public class Dets extends AppCompatActivity {
                 } catch (Exception e){
                     e.printStackTrace();
                 }
+            }
+        });
+        website.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://makaveliodds.com/"));
+                startActivity(intent);
+
             }
         });
 
@@ -179,38 +193,31 @@ public class Dets extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-        interstitialAd.setAdListener(new AdListener(){
-            public void onAdLoaded(){
-                if (interstitialAd.isLoaded()) {
-                    interstitialAd.show();
+        if (interstitialAd.isLoaded()) {
+            interstitialAd.show();
+            interstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    finish();
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }
-                else
-                {
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                }
-            }
+            });
+        }else{
+            super.onBackPressed();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
 
 
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            }
 
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-                Dets.super.onBackPressed();
 
-                //startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            }
-        });
+          
 
 
     }
     @Override
     protected void onRestart() {
         super.onRestart();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 }

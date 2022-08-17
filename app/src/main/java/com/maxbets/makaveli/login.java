@@ -52,7 +52,7 @@ public class login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         MobileAds.initialize(this, "ca-app-pub-5425147727091345~6303301938");
         interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        interstitialAd.setAdUnitId("ca-app-pub-5425147727091345/4361143221");
         AdRequest request = new AdRequest.Builder().build();
         interstitialAd.loadAd(request);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -126,32 +126,19 @@ public class login extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-
-        interstitialAd.setAdListener(new AdListener(){
-            public void onAdLoaded(){
-                if (interstitialAd.isLoaded()) {
-                    interstitialAd.show();
+        if (interstitialAd.isLoaded()) {
+            interstitialAd.show();
+            interstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    finish();
                 }
-                else
-                {
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                }
-            }
-
-
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            }
-
-            @Override
-            public void onAdClosed() {
-
-
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            }
-        });
+            });
+        }else{
+            super.onBackPressed();
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
 
 
     }

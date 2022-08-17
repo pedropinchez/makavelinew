@@ -13,6 +13,7 @@
             android:orientation="vertical"
             android:padding="@dimen/_5sdp"
            >
+
             <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/ads"
                 android:layout_width="match_parent"
@@ -89,6 +90,15 @@
                 android:id="@+id/telegram"
                 android:padding="@dimen/_10sdp"
                 android:text="join us on telegram"
+                android:textColor="#090909"/>
+            <Button
+                android:background="@drawable/btn_rounded_red"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/website"
+                android:padding="@dimen/_10sdp"
+                android:text="visit our website"
                 android:textColor="#090909"/>
 
 

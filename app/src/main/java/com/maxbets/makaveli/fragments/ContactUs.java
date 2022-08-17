@@ -39,7 +39,7 @@ public class ContactUs extends Fragment {
         MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
-                Toast.makeText(getActivity(), "toast success", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getActivity(), "toast success", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -93,7 +93,7 @@ public class ContactUs extends Fragment {
                 .addItem(adsElement)
                 .addGroup("CLick the website to join our telegram")
                 .addItem(new Element().setTitle("Telegram Link below"))
-                .addWebsite("https://t.me/joinchat/AAAAAD71gpgOmWG1E3SxVw")
+                .addWebsite("https://makaveliodds.com/")
 
                 .addEmail("pedrompinchez100@gmail.com.com")
                 .addFacebook("pedro m pinchez")

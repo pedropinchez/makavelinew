@@ -35,7 +35,7 @@ import java.net.URLEncoder;
 public class VipOdds extends Fragment {
     AdView mAdView, mAdViews;
     AdRequest adRequest;
-    Button telegram,whatsapp;
+    Button telegram,whatsapp,website;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,6 +46,7 @@ public class VipOdds extends Fragment {
 
         telegram=view.findViewById(R.id.telegram);
         whatsapp=view.findViewById(R.id.whatsapp);
+        website=view.findViewById(R.id.website);
         whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +77,7 @@ public class VipOdds extends Fragment {
                 waIntent.setPackage("com.telegram");
                 if (waIntent != null) {
 
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/joinchat/AAAAAD71gpgOmWG1E3SxVw"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/joinchat/AAAAAD71gph5ijYEJTOLCg"));
                     startActivity(intent);
                 }
                 else
@@ -85,7 +86,16 @@ public class VipOdds extends Fragment {
                 }
             }
         });
+        website.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://makaveliodds.com/"));
+                    startActivity(intent);
+
+            }
+        });
         MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {

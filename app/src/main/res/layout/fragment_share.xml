@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/ads"
         android:layout_width="match_parent"
@@ -12,7 +13,22 @@
         ads:adUnitId="ca-app-pub-5425147727091345/4688236853">
 
     </com.google.android.gms.ads.AdView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proceed to buy?"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="#000"
+        />
 
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:text="Buy"
+        android:background="#13AE19"
+        android:layout_gravity="center_horizontal"/>
 
 
 </LinearLayout>
